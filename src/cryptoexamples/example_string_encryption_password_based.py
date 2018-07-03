@@ -17,7 +17,7 @@ def string_encryption_password_based():
     ENCRYPTION and DECRYPTION process
     TODO: Comments here
     """
-    plain_text = "Text that should be encrypted at all costs"
+    plain_text = "Text that is going to be sent over an insecure channel and must be encrypted at all costs!"
 
     # GENERATE password (not needed if you have a password already)
     password = b"mypassword"
