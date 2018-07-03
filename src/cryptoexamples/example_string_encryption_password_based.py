@@ -20,7 +20,6 @@ def string_encryption_password_based():
     plain_text = "Text that is going to be sent over an insecure channel and must be encrypted at all costs!"
 
     # GENERATE password (not needed if you have a password already)
-    password = b"mypassword"
     import secrets
     import string
     alphabet = string.ascii_letters + string.digits
