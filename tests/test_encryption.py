@@ -6,6 +6,8 @@ from src.cryptoexamples.example_string_encryption_password_based import string_e
 from src.cryptoexamples.example_string_encryption_key_based import string_encryption_key_based
 from src.cryptoexamples.example_file_encryption_password_based import file_encryption_password_based
 from src.cryptoexamples.example_hash import string_hash
+from src.cryptoexamples.example_signature_rsa import signature_rsa
+
 
 def test_string_encryption_password_based(caplog):
     string_encryption_password_based()
@@ -26,3 +28,8 @@ def test_string_hash(caplog):
     string_hash()
     # uses string: "Text that should be authenticated by comparing the hash of it!"
     assert "jg0X629-SmdP0_LTHZV_3zXBrizM3_hptRZVIuTXSCtyaqAe0NB8KMld2qebBIXFS1yowCUpCPu93l_fPmKEXg==" in caplog.text
+
+
+def test_signature_rsa(caplog):
+    signature_rsa()
+    assert "Signature is correct: True" in caplog.text
