@@ -25,7 +25,7 @@ def string_encryption_key_based():
     cipher_text = base64.urlsafe_b64encode(cipher_text_bytes)
 
     # DECRYPTION
-    decrypted_text_bytes = fernet.decrypt(base64.urlsafe_b64decode(cipher_text))
-    decrypted_text = decrypted_text_bytes.decode('utf-8')
+    decrypted_cipher_text_bytes = fernet.decrypt(base64.urlsafe_b64decode(cipher_text))
+    decrypted_cipher_text = decrypted_cipher_text_bytes.decode('utf-8')
 
-    logger.info("Decrypted and original plain text are the same: {}".format(decrypted_text == plain_text))
+    logger.info("Decrypted and original plain text are the same: {}".format(decrypted_cipher_text == plain_text))

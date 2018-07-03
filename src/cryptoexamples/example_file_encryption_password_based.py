@@ -51,7 +51,7 @@ def file_encryption_password_based():
         cipher_file_content = f.read()
 
     # DECRYPTION
-    decrypted_text_bytes = fernet.decrypt(cipher_file_content)
-    decrypted_text = decrypted_text_bytes.decode('utf-8')
+    decrypted_cipher_text_bytes = fernet.decrypt(cipher_file_content)
+    decrypted_cipher_text = decrypted_cipher_text_bytes.decode('utf-8')
 
-    logger.info("Decrypted and original plain text are the same: {}".format(decrypted_text == plain_text))
+    logger.info("Decrypted and original plain text are the same: {}".format(decrypted_cipher_text == plain_text))
