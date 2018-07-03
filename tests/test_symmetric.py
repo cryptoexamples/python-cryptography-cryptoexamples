@@ -4,6 +4,7 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from src.cryptoexamples.example_string_encryption_password_based import string_encryption_password_based
 from src.cryptoexamples.example_string_encryption_key_based import string_encryption_key_based
+from src.cryptoexamples.example_file_encryption_password_based import file_encryption_password_based
 
 
 def test_string_encryption_password_based(caplog):
@@ -13,4 +14,8 @@ def test_string_encryption_password_based(caplog):
 
 def test_string_encryption_key_based(caplog):
     string_encryption_key_based()
+    assert "Decrypted and original plain text are the same: True" in caplog.text
+
+def test_file_encryption_password_based(caplog):
+    file_encryption_password_based()
     assert "Decrypted and original plain text are the same: True" in caplog.text

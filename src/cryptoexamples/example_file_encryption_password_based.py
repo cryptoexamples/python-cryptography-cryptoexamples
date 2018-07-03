@@ -12,12 +12,14 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def string_encryption_password_based():
+def file_encryption_password_based():
     """
     ENCRYPTION and DECRYPTION process
     TODO: Comments here
     """
-    plain_text = "Text that is going to be sent over an insecure channel and must be encrypted at all costs!"
+    # alternative: read plain text from file
+    plain_text = "Text that is going to be sent over an insecure channel and must be encrypted at all costs!\n" \
+                 "Also with multiple lines!"
 
     # GENERATE password (not needed if you have a password already)
     password = b"mypassword"
@@ -39,11 +41,17 @@ def string_encryption_password_based():
     # ENCRYPTION
     fernet = Fernet(key)
     cipher_text_bytes = fernet.encrypt(plain_text.encode('utf-8'))
-    # CONVERSION of raw bytes to BASE64 representation
-    cipher_text = base64.urlsafe_b64encode(cipher_text_bytes)
+
+    # WRITE to file
+    with open("encrypted_file.enc", 'wb') as f:
+        f.write(cipher_text_bytes)
+
+    # READ from file
+    with open("encrypted_file.enc", 'rb') as f:
+        cipher_file_content = f.read()
 
     # DECRYPTION
-    decrypted_text_bytes = fernet.decrypt(base64.urlsafe_b64decode(cipher_text))
+    decrypted_text_bytes = fernet.decrypt(cipher_file_content)
     decrypted_text = decrypted_text_bytes.decode('utf-8')
 
     logger.info("Decrypted and original plain text are the same: {}".format(decrypted_text == plain_text))
