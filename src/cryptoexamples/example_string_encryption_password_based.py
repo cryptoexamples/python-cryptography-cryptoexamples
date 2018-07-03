@@ -21,7 +21,12 @@ def string_encryption_password_based():
 
     # GENERATE password (not needed if you have a password already)
     password = b"mypassword"
-    # TODO: Add password generation here
+    import secrets
+    import string
+    alphabet = string.ascii_letters + string.digits
+    password = "".join(secrets.choice(alphabet) for _ in range(40))
+    password = password.encode('utf-8')
+    # possible password generation (>=python 3.6), note that java example generates key
 
     # GENERATE random salt (needed for PBKDF2HMAC)
     salt = os.urandom(16)

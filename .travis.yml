@@ -1,9 +1,7 @@
 language: python
 python:
-  - "3.5"
   - "3.6"
   #- "3.7" not yet available in travis
-  # command to install dependencies
 addons:
   sonarcloud:
     organization: "kmindi-github" # the key of the org you chose at step #3
@@ -12,7 +10,6 @@ cache:
   - "$HOME/.sonar/cache"
 install:
   - pip install -r requirements.txt
-# command to run tests
 script:
   - pytest --junitxml=xunitresult.xml --cov=. --cov-report=xml
   - sonar-scanner
