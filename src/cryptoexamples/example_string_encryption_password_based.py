@@ -3,10 +3,10 @@ import os
 import logging
 
 import secrets  # python >= 3.6
-from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 # set up logger
 logging.basicConfig(level=logging.INFO)
@@ -15,8 +15,13 @@ logger = logging.getLogger(__name__)
 
 def string_encryption_password_based():
     """
-    ENCRYPTION and DECRYPTION process
-    TODO: Comments here
+    All in one example for encryption and decryption of a string in one method.
+    - Random key generation using OS random mode
+    - Random salt generation using OS random mode
+    - Key derivation using PBKDF2 HMAC SHA-512
+    - AES-256 authenticated encryption using GCM
+    - BASE64 encoding as representation for the byte-arrays
+    - UTF-8 encoding of Strings
     """
     plain_text = "Text that is going to be sent over an insecure channel and must be encrypted at all costs!"
 
@@ -36,16 +41,27 @@ def string_encryption_password_based():
         iterations=100000,
         backend=default_backend()
     )
-    key = base64.urlsafe_b64encode(kdf.derive(password))
+    key = kdf.derive(password)
+
+    # GENERATE random nonce (number used once)
+    nonce = os.urandom(32)
 
     # ENCRYPTION
-    fernet = Fernet(key)
-    cipher_text_bytes = fernet.encrypt(plain_text.encode('utf-8'))
+    aesgcm = AESGCM(key)
+    cipher_text_bytes = aesgcm.encrypt(
+        nonce,
+        plain_text.encode('utf-8'),
+        None
+    )
     # CONVERSION of raw bytes to BASE64 representation
     cipher_text = base64.urlsafe_b64encode(cipher_text_bytes)
 
     # DECRYPTION
-    decrypted_cipher_text_bytes = fernet.decrypt(base64.urlsafe_b64decode(cipher_text))
+    decrypted_cipher_text_bytes = aesgcm.decrypt(
+        nonce,
+        base64.urlsafe_b64decode(cipher_text),
+        None
+    )
     decrypted_cipher_text = decrypted_cipher_text_bytes.decode('utf-8')
 
     logger.info("Decrypted and original plain text are the same: {}".format(decrypted_cipher_text == plain_text))
