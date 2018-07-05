@@ -9,7 +9,7 @@ references: [
     {
         url: "https://cryptography.io/en/latest/hazmat/primitives/aead/#cryptography.hazmat.primitives.ciphers.aead.AESGCM",
         description: "Cryptography AEAD Documentation"
-    }
+    },
     {
         url: "https://cryptography.io/en/latest/hazmat/primitives/key-derivation-functions/#cryptography.hazmat.primitives.kdf.pbkdf2.PBKDF2HMAC",
         description: "Cryptography Password Based Key Derivation Function 2 Documentation"
