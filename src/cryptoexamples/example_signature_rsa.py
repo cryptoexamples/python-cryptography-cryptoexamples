@@ -14,12 +14,14 @@ logger = logging.getLogger(__name__)
 
 def signature_rsa():
     """
-    SIGNATURE process
-    TODO: Comments here
+    All in one example for cryptographic signing of a string in one method.
+    - Generation of public and private RSA 4096 bit keypair
+    - SHA-512 with RSA signature of text using PSS and MGF1 padding
+    - BASE64 encoding as representation for the byte-arrays
+    - UTF-8 encoding of Strings
     """
     plain_text = "Text that should be signed to prevent unknown tampering with its content."
 
-    # TODO: load keypair?
     # GENERATE NEW KEYPAIR
     private_key = rsa.generate_private_key(
         public_exponent=65537,

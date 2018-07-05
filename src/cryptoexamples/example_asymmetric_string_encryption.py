@@ -14,12 +14,14 @@ logger = logging.getLogger(__name__)
 
 def asymmetric_string_encryption():
     """
-    ENCRYPTION and DECRYPTION process
-    TODO: Comments here
+    All in one example for asymmetric encryption and decryption of a string in one method.
+    - Generation of public and private RSA 4096 bit keypair
+    - RSA encryption and decryption of text using OAEP and MGF1 padding
+    - BASE64 encoding as representation for the byte-arrays
+    - UTF-8 encoding of Strings
     """
     plain_text = "Text that is going to be sent over an insecure channel and must be encrypted at all costs!"
 
-    # TODO: load keypair?
     # GENERATE NEW KEYPAIR
     private_key = rsa.generate_private_key(
         public_exponent=65537,

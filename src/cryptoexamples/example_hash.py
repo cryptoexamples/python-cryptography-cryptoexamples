@@ -11,8 +11,10 @@ logger = logging.getLogger(__name__)
 
 def string_hash():
     """
-    HASHING process
-    TODO: Comments here
+    All in one example for hashing of a string in one method.
+    - SHA-512 hashes
+    - BASE64 encoding as representation for the byte-arrays
+    - UTF-8 encoding of Strings
     """
     plain_text = "Text that should be authenticated by comparing the hash of it!"
 
