@@ -38,7 +38,7 @@ tags: [Python, AES, GCM, PBKDF2, Salt, AEAD]
 - Previously shared common secret (password)
 - 
 
-## Sample Code for Python based symmetric encryption using AES-GCM and PBKDF2
+## Example Code for Python based symmetric encryption using AES-GCM and PBKDF2
 
 ```python
 {% include_relative src/cryptoexamples/example_symmetric_string_encryption_password_based.py %}

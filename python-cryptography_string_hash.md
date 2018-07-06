@@ -32,7 +32,7 @@ tags: [Python, hash, SHA, SHA-512]
 
 - Verifying if a string has been changed
 
-## Sample Code for Python based hashing of a String using SHA-512, BASE64 and UTF-8 encoding
+## Example Code for Python based hashing of a String using SHA-512, BASE64 and UTF-8 encoding
 
 ```python
 {% include_relative src/cryptoexamples/example_hash.py %}

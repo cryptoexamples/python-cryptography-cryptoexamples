@@ -32,7 +32,7 @@ tags: [Python, RSA, Asymmetric, String, Encryption]
 
 - Encrypt a string using the public key and decrypting it using the private key
 
-## Sample Code for Python based asymmetric encryption using RSA
+## Example Code for Python based asymmetric encryption using RSA
 
 ```python
 {% include_relative src/cryptoexamples/example_asymmetric_string_encryption.py %}

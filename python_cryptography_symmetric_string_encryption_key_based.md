@@ -33,7 +33,7 @@ tags: [Python, AES, GCM, Salt, AEAD]
 - Random key generation
 - String encryption
 
-## Sample Code for Python based symmetric encryption using AES-GCM and generation of keys
+## Example Code for Python based symmetric encryption using AES-GCM and generation of keys
 
 ```python
 {% include_relative src/cryptoexamples/example_symmetric_string_encryption_password_based.py %}

@@ -32,7 +32,7 @@ tags: [Python, RSA, Asymmetric, Key, Storage, Serialization, PEM]
 
 - Store private and public keys as files
 
-## Sample Code for Python based asymmetric key storage using PEM serialization
+## Example Code for Python based asymmetric key storage using PEM serialization
 
 ```python
 {% include_relative src/cryptoexamples/example_asymmetric_key_storage.py %}

@@ -37,7 +37,7 @@ tags: [Python, AES, GCM, PBKDF2, Salt, AEAD]
 - Password based encryption of a file
 - Previously shared common secret (password)
 
-## Sample Code for Python based symmetric file encryption using AES-GCM and PBKDF2
+## Example Code for Python based symmetric file encryption using AES-GCM and PBKDF2
 
 ```python
 {% include_relative src/cryptoexamples/example_symmetric_file_encryption_password_based.py %}

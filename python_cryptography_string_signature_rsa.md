@@ -32,7 +32,7 @@ tags: [Python, RSA, Asymmetric, String, hash, SHA, SHA-512]
 
 - verifying if a string has been changed
 
-## Sample Code for Python based signing of a String using SHA-512, RSA 4096, BASE64 and UTF-8 encoding
+## Example Code for Python based signing of a String using SHA-512, RSA 4096, BASE64 and UTF-8 encoding
 
 ```python
 {% include_relative src/cryptoexamples/example_string_signature_rsa.py %}
