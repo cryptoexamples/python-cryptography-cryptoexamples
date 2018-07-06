@@ -1,6 +1,8 @@
 import base64
 import logging
 
+from cryptography.exceptions import AlreadyFinalized
+from cryptography.exceptions import UnsupportedAlgorithm
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes
 
@@ -15,17 +17,20 @@ def string_hash():
     - SHA-512 hashes
     - BASE64 encoding as representation for the byte-arrays
     - UTF-8 encoding of Strings
+    - Exception handling
     """
     plain_text = "Text that should be authenticated by comparing the hash of it!"
+    try:
+        # Get digest instance
+        digest = hashes.Hash(hashes.SHA512(), backend=default_backend())
 
-    # Get digest instance
-    digest = hashes.Hash(hashes.SHA512(), backend=default_backend())
+        # CREATE HASH
+        digest.update(plain_text.encode('utf-8'))
+        hash_bytes = digest.finalize()
 
-    # CREATE HASH
-    digest.update(plain_text.encode('utf-8'))
-    hash_bytes = digest.finalize()
+        # CONVERT/ENCODE IN BASE64
+        hash_string = base64.urlsafe_b64encode(hash_bytes)
 
-    # CONVERT/ENCODE IN BASE64
-    hash_string = base64.urlsafe_b64encode(hash_bytes)
-
-    logger.info(hash_string)
+        logger.info(hash_string)
+    except (UnsupportedAlgorithm, AlreadyFinalized):
+        logger.exception("Hashing failed")

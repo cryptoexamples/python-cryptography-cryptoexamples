@@ -1,12 +1,15 @@
 import base64
-import os
 import logging
-
+import os
 import secrets  # python >= 3.6
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
-from cryptography.hazmat.primitives import hashes
+
+from cryptography.exceptions import AlreadyFinalized
+from cryptography.exceptions import InvalidTag
+from cryptography.exceptions import UnsupportedAlgorithm
 from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 # set up logger
 logging.basicConfig(level=logging.INFO)
@@ -22,46 +25,50 @@ def string_encryption_password_based():
     - AES-256 authenticated encryption using GCM
     - BASE64 encoding as representation for the byte-arrays
     - UTF-8 encoding of Strings
+    - Exception handling
     """
     plain_text = "Text that is going to be sent over an insecure channel and must be encrypted at all costs!"
 
-    # GENERATE password (not needed if you have a password already)
-    alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    password = "".join(secrets.choice(alphabet) for _ in range(40))
-    password = password.encode('utf-8')
+    try:
+        # GENERATE password (not needed if you have a password already)
+        alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        password = "".join(secrets.choice(alphabet) for _ in range(40))
+        password = password.encode('utf-8')
 
-    # GENERATE random salt (needed for PBKDF2HMAC)
-    salt = os.urandom(16)
+        # GENERATE random salt (needed for PBKDF2HMAC)
+        salt = os.urandom(16)
 
-    # DERIVE key (from password and salt)
-    kdf = PBKDF2HMAC(
-        algorithm=hashes.SHA512(),
-        length=32,
-        salt=salt,
-        iterations=100000,
-        backend=default_backend()
-    )
-    key = kdf.derive(password)
+        # DERIVE key (from password and salt)
+        kdf = PBKDF2HMAC(
+            algorithm=hashes.SHA512(),
+            length=32,
+            salt=salt,
+            iterations=100000,
+            backend=default_backend()
+        )
+        key = kdf.derive(password)
 
-    # GENERATE random nonce (number used once)
-    nonce = os.urandom(32)
+        # GENERATE random nonce (number used once)
+        nonce = os.urandom(32)
 
-    # ENCRYPTION
-    aesgcm = AESGCM(key)
-    cipher_text_bytes = aesgcm.encrypt(
-        nonce,
-        plain_text.encode('utf-8'),
-        None
-    )
-    # CONVERSION of raw bytes to BASE64 representation
-    cipher_text = base64.urlsafe_b64encode(cipher_text_bytes)
+        # ENCRYPTION
+        aesgcm = AESGCM(key)
+        cipher_text_bytes = aesgcm.encrypt(
+            nonce,
+            plain_text.encode('utf-8'),
+            None
+        )
+        # CONVERSION of raw bytes to BASE64 representation
+        cipher_text = base64.urlsafe_b64encode(cipher_text_bytes)
 
-    # DECRYPTION
-    decrypted_cipher_text_bytes = aesgcm.decrypt(
-        nonce,
-        base64.urlsafe_b64decode(cipher_text),
-        None
-    )
-    decrypted_cipher_text = decrypted_cipher_text_bytes.decode('utf-8')
+        # DECRYPTION
+        decrypted_cipher_text_bytes = aesgcm.decrypt(
+            nonce,
+            base64.urlsafe_b64decode(cipher_text),
+            None
+        )
+        decrypted_cipher_text = decrypted_cipher_text_bytes.decode('utf-8')
 
-    logger.info("Decrypted and original plain text are the same: {}".format(decrypted_cipher_text == plain_text))
+        logger.info("Decrypted and original plain text are the same: {}".format(decrypted_cipher_text == plain_text))
+    except (UnsupportedAlgorithm, AlreadyFinalized, InvalidTag):
+        logger.exception("Symmetric encryption failed")
