@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.1.0] - 2018-07-06
+
+### Added
+
+- added Changelog
+- added Asymmetric RSA String Encryption
+- added Asymmetric RSA String Signature
+- added Asymmetric RSA Key Storage
+- added Symmetric key based String Encryption
+- added Symmetric password based String Encryption
+- added Symmetric password based File Encryption
+- added Hashing
+- added testing
 
 ## [X.Y.Z] - XXXX-XX-XX (TEMPLATE for new versions)
 
@@ -40,4 +53,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - made some security relevant changes
 - made other security relevant changes
 
-[Unreleased]: https://github.com/cryptoexamples/python-cryptography-cryptoexamples/compare/49e0ed3c6fae89ac18427435ca4ab88fe913f04d...HEAD
+[Unreleased]: https://github.com/cryptoexamples/python-cryptography-cryptoexamples/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/cryptoexamples/java-crypto-examples/releases/tag/v0.1.0
