@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 def string_encryption_password_based():
     """
     All in one example for encryption and decryption of a string in one method.
-    - Random key generation using OS random mode
+    - Random password generation using strong secure random number generator
     - Random salt generation using OS random mode
     - Key derivation using PBKDF2 HMAC SHA-512
     - AES-256 authenticated encryption using GCM
@@ -33,7 +33,7 @@ def string_encryption_password_based():
         # GENERATE password (not needed if you have a password already)
         alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         password = "".join(secrets.choice(alphabet) for _ in range(40))
-        password = password.encode('utf-8')
+        password_bytes = password.encode('utf-8')
 
         # GENERATE random salt (needed for PBKDF2HMAC)
         salt = os.urandom(16)
@@ -46,7 +46,7 @@ def string_encryption_password_based():
             iterations=100000,
             backend=default_backend()
         )
-        key = kdf.derive(password)
+        key = kdf.derive(password_bytes)
 
         # GENERATE random nonce (number used once)
         nonce = os.urandom(32)

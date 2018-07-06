@@ -8,6 +8,7 @@ from src.cryptoexamples.example_symmetric_file_encryption_password_based import 
 from src.cryptoexamples.example_hash import string_hash
 from src.cryptoexamples.example_asymmetric_string_encryption import asymmetric_string_encryption
 from src.cryptoexamples.example_string_signature_rsa import signature_rsa
+from src.cryptoexamples.example_asymmetric_key_storage import asymmetric_key_storage
 
 
 def test_string_encryption_password_based(caplog):
@@ -39,3 +40,8 @@ def test_asymmetric_string_encryption(caplog):
 def test_signature_rsa(caplog):
     signature_rsa()
     assert "Signature is correct: True" in caplog.text
+
+def test_asymmetric_key_storage(caplog):
+    asymmetric_key_storage()
+    assert "Private Key before and after storage is the same: True" in caplog.text
+    assert "Public Key before and after storage is the same: True" in caplog.text
