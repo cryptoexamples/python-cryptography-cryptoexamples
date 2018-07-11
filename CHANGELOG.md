@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.1.1] - 2018-07-11
+
+### Changed
+
+- fixed wrong link to rsa signature file on landing page
+
 ## [0.1.0] - 2018-07-06
 
 ### Added
@@ -53,5 +59,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - made some security relevant changes
 - made other security relevant changes
 
-[Unreleased]: https://github.com/cryptoexamples/python-cryptography-cryptoexamples/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/cryptoexamples/python-cryptography-cryptoexamples/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/cryptoexamples/java-crypto-examples/releases/tag/v0.1.1
 [0.1.0]: https://github.com/cryptoexamples/java-crypto-examples/releases/tag/v0.1.0
