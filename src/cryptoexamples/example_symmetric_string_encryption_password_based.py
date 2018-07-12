@@ -36,14 +36,14 @@ def string_encryption_password_based():
         password_bytes = password.encode('utf-8')
 
         # GENERATE random salt (needed for PBKDF2HMAC)
-        salt = os.urandom(16)
+        salt = os.urandom(64)
 
         # DERIVE key (from password and salt)
         kdf = PBKDF2HMAC(
             algorithm=hashes.SHA512(),
             length=32,
             salt=salt,
-            iterations=100000,
+            iterations=10000,
             backend=default_backend()
         )
         key = kdf.derive(password_bytes)
