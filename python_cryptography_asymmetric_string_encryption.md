@@ -35,11 +35,7 @@ tags: [Python, RSA, Asymmetric, String, Encryption]
 
 ## Installation
 
-Install `cryptography` with `pip`:
-```bash
-pip install cryptorgraphy
-```
-See [Installation](https://cryptography.io/en/latest/installation/) for more information.
+[Install](https://cryptography.io/en/latest/installation/) `cryptography` with [`pip`](https://packaging.python.org/tutorials/installing-packages/): `pip install cryptorgraphy`
 
 ## Used Python version
 
