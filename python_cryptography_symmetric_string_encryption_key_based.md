@@ -8,7 +8,7 @@ references: [
     # Place a list of references used to create and/or understand this example.
     {
         url: "https://cryptography.io/en/latest/hazmat/primitives/aead/#cryptography.hazmat.primitives.ciphers.aead.AESGCM",
-        description: "Cryptography AEAD Documentation"
+        description: "Cryptography AEAD Documentation - AESGCM"
     }
 ]
 authors: [
@@ -31,7 +31,20 @@ tags: [Python, AES, GCM, Salt, AEAD]
 ## Use cases
 
 - Random key generation
-- String encryption
+- Key based encryption of a string
+
+## Installation
+
+Install `cryptography` with `pip`:
+```bash
+pip install cryptorgraphy
+```
+See [Installation](https://cryptography.io/en/latest/installation/) for more information.
+
+## Used Python version
+
+- Python 3.6
+- Python 3.7
 
 ## Example Code for Python based symmetric encryption using AES-GCM and generation of keys
 

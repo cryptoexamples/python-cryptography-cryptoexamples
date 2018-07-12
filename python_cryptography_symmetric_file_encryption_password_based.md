@@ -8,7 +8,7 @@ references: [
     # Place a list of references used to create and/or understand this example.
     {
         url: "https://cryptography.io/en/latest/hazmat/primitives/aead/#cryptography.hazmat.primitives.ciphers.aead.AESGCM",
-        description: "Cryptography AEAD Documentation"
+        description: "Cryptography AEAD Documentation - AESGCM"
     },
     {
         url: "https://cryptography.io/en/latest/hazmat/primitives/key-derivation-functions/#cryptography.hazmat.primitives.kdf.pbkdf2.PBKDF2HMAC",
@@ -36,6 +36,19 @@ tags: [Python, AES, GCM, PBKDF2, Salt, AEAD]
 
 - Password based encryption of a file
 - Previously shared common secret (password)
+
+## Installation
+
+Install `cryptography` with `pip`:
+```bash
+pip install cryptorgraphy
+```
+See [Installation](https://cryptography.io/en/latest/installation/) for more information.
+
+## Used Python version
+
+- Python 3.6
+- Python 3.7
 
 ## Example Code for Python based symmetric file encryption using AES-GCM and PBKDF2
 

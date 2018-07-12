@@ -7,7 +7,7 @@ folder: Python Cryptography
 references: [
     # Place a list of references used to create and/or understand this example.
     {
-        url: "https://cryptography.io/en/latest/hazmat/primitives/asymmetric/rsa/#module-cryptography.hazmat.primitives.asymmetric.rsa",
+        url: "https://cryptography.io/en/latest/hazmat/primitives/asymmetric/rsa/",
         description: "Cryptography RSA Documentation"
     }
 ]
@@ -30,7 +30,21 @@ tags: [Python, RSA, Asymmetric, String, Encryption]
 
 ## Use cases
 
+- All can encrypt a message using the public key, but only the recipient can decrypt it using the private key
 - Encrypt a string using the public key and decrypting it using the private key
+
+## Installation
+
+Install `cryptography` with `pip`:
+```bash
+pip install cryptorgraphy
+```
+See [Installation](https://cryptography.io/en/latest/installation/) for more information.
+
+## Used Python version
+
+- Python 3.6
+- Python 3.7
 
 ## Example Code for Python based asymmetric encryption using RSA
 

@@ -7,7 +7,7 @@ folder: Python Cryptography
 references: [
     # Place a list of references used to create and/or understand this example.
     {
-        url: "https://cryptography.io/en/latest/hazmat/primitives/asymmetric/rsa/#module-cryptography.hazmat.primitives.asymmetric.rsa",
+        url: "https://cryptography.io/en/latest/hazmat/primitives/asymmetric/rsa/",
         description: "Cryptography RSA Documentation"
     }
 ]
@@ -30,7 +30,20 @@ tags: [Python, RSA, Asymmetric, String, hash, SHA, SHA-512]
 
 ## Use cases
 
-- verifying if a string has been changed
+- Verifying if a string has been changed
+
+## Installation
+
+Install `cryptography` with `pip`:
+```bash
+pip install cryptorgraphy
+```
+See [Installation](https://cryptography.io/en/latest/installation/) for more information.
+
+## Used Python version
+
+- Python 3.6
+- Python 3.7
 
 ## Example Code for Python based signing of a String using SHA-512, RSA 4096, BASE64 and UTF-8 encoding
 

@@ -32,6 +32,19 @@ tags: [Python, hash, SHA, SHA-512]
 
 - Verifying if a string has been changed
 
+## Installation
+
+Install `cryptography` with `pip`:
+```bash
+pip install cryptorgraphy
+```
+See [Installation](https://cryptography.io/en/latest/installation/) for more information.
+
+## Used Python version
+
+- Python 3.6
+- Python 3.7
+
 ## Example Code for Python based hashing of a String using SHA-512, BASE64 and UTF-8 encoding
 
 ```python
