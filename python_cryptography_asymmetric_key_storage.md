@@ -25,12 +25,25 @@ current_reviews: [
 ]
 # Indicates when this example was last updated/created. Reviews don't change this.
 last_updated: "2018-07-06"
-tags: [Python, RSA, Asymmetric, Key, Storage, Serialization, PEM]
+tags: [Python, RSA, Asymmetric, Key, Storage, PEM]
 ---
 
 ## Use cases
 
 - Store private and public keys as files
+
+## Installation
+
+Install `cryptography` with `pip`:
+```bash
+pip install cryptorgraphy
+```
+See [Installation](https://cryptography.io/en/latest/installation/) for more information.
+
+## Used Python version
+
+- Python 3.6
+- Python 3.7
 
 ## Example Code for Python based asymmetric key storage using PEM serialization
 
