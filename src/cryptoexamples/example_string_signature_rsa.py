@@ -43,7 +43,7 @@ def signature_rsa():
             hashes.SHA512()
 
         )
-        logger.info("Signature: {}".format(base64.urlsafe_b64encode(signature)))
+        logger.info("Signature: %s", base64.urlsafe_b64encode(signature))
 
         # VERIFY JUST CREATED SIGNATURE USING PUBLIC KEY
         try:
@@ -60,6 +60,6 @@ def signature_rsa():
         except InvalidSignature:
             is_signature_correct = False
 
-        logger.info("Signature is correct: {}".format(is_signature_correct))
+        logger.info("Signature is correct: %s", is_signature_correct)
     except UnsupportedAlgorithm:
         logger.exception("Signing failed")

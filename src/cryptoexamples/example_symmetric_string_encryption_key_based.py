@@ -46,6 +46,6 @@ def string_encryption_key_based():
         )
         decrypted_cipher_text = decrypted_cipher_text_bytes.decode('utf-8')
 
-        logger.info("Decrypted and original plain text are the same: {}".format(decrypted_cipher_text == plain_text))
+        logger.info("Decrypted and original plain text are the same: %s", decrypted_cipher_text == plain_text)
     except InvalidTag:
         logger.exception("Symmetric string encryption failed")

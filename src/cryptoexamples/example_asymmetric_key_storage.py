@@ -48,21 +48,21 @@ def asymmetric_key_storage():
         )
 
         # WRITE KEYS
-        with open("private_key.pem", 'wb') as f:
-            f.write(pem_private)
-        with open("public_key.pem", 'wb') as f:
-            f.write(pem_public)
+        with open("private_key.pem", 'wb') as key_file:
+            key_file.write(pem_private)
+        with open("public_key.pem", 'wb') as key_file:
+            key_file.write(pem_public)
 
         # LOAD KEYS
-        with open("private_key.pem", "rb") as f:
+        with open("private_key.pem", "rb") as key_file:
             private_key_after = serialization.load_pem_private_key(
-                f.read(),
+                key_file.read(),
                 password=password_bytes,
                 backend=default_backend()
             )
-        with open("public_key.pem", "rb") as f:
+        with open("public_key.pem", "rb") as key_file:
             public_key_after = serialization.load_pem_public_key(
-                f.read(),
+                key_file.read(),
                 backend=default_backend()
             )
 
@@ -83,7 +83,7 @@ def asymmetric_key_storage():
             format=serialization.PublicFormat.SubjectPublicKeyInfo
         )
 
-        logger.info("Private Key before and after storage is the same: {}".format(private_before == private_after))
-        logger.info("Public Key before and after storage is the same: {}".format(public_before == public_after))
+        logger.info("Private Key before and after storage is the same: %s", private_before == private_after)
+        logger.info("Public Key before and after storage is the same: %s", public_before == public_after)
     except (UnsupportedAlgorithm, ValueError, TypeError):
         logger.exception("Asymmetric key storage failed")

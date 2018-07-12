@@ -60,12 +60,12 @@ def file_encryption_password_based():
         )
 
         # WRITE to file
-        with open("encrypted_file.enc", 'wb') as f:
-            f.write(cipher_text_bytes)
+        with open("encrypted_file.enc", 'wb') as encrypted_file:
+            encrypted_file.write(cipher_text_bytes)
 
         # READ from file
-        with open("encrypted_file.enc", 'rb') as f:
-            cipher_file_content = f.read()
+        with open("encrypted_file.enc", 'rb') as encrypted_file:
+            cipher_file_content = encrypted_file.read()
 
         # DECRYPTION
         decrypted_cipher_text_bytes = aesgcm.decrypt(
@@ -75,6 +75,6 @@ def file_encryption_password_based():
         )
         decrypted_cipher_text = decrypted_cipher_text_bytes.decode('utf-8')
 
-        logger.info("Decrypted and original plain text are the same: {}".format(decrypted_cipher_text == plain_text))
+        logger.info("Decrypted and original plain text are the same: %s", decrypted_cipher_text == plain_text)
     except (UnsupportedAlgorithm, AlreadyFinalized, InvalidTag):
         logger.exception("Symmetric file encryption failed")
