@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def asymmetric_string_encryption():
+def demonstrate_asymmetric_string_encryption():
     """
     All in one example for asymmetric encryption and decryption of a string in one method.
     - Generation of public and private RSA 4096 bit keypair

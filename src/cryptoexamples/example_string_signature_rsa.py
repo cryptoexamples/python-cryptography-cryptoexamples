@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def signature_rsa():
+def demonstrate_signature_rsa():
     """
     All in one example for cryptographic signing of a string in one method.
     - Generation of public and private RSA 4096 bit keypair

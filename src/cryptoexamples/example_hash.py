@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def string_hash():
+def demonstrate_string_hash():
     """
     All in one example for hashing of a string in one method.
     - SHA-512 hashes

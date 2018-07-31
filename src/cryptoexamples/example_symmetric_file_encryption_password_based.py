@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def file_encryption_password_based():
+def demonstrate_file_encryption_password_based():
     """
     All in one example for encryption and decryption of a file in one method.
     - Random password generation using strong secure random number generator

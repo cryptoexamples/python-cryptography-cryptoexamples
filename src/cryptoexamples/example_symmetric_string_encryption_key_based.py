@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def string_encryption_key_based():
+def demonstrate_string_encryption_key_based():
     """
     All in one example for encryption and decryption of a string in one method.
     - Random key generation using OS random mode

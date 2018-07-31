@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def asymmetric_key_storage():
+def demonstrate_asymmetric_key_storage():
     """
     All in one example for key storage of a asymmetric key in one method.
     - Random password generation using strong secure random number generator
