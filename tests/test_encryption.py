@@ -25,8 +25,7 @@ def test_string_encryption_key_based(caplog):
 
 
 def test_file_encryption_password_based(caplog):
-    demonstrate_file_encryption_password_based("Text that is going to be sent over an insecure channel and must be "
-                                               "encrypted at all costs!\n Also with multiple lines!", "")
+    demonstrate_file_encryption_password_based("res/plain_text_file.txt", "")
     assert "Decrypted and original plain text are the same: True" in caplog.text
 
 

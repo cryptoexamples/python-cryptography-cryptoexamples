@@ -49,19 +49,19 @@ def demonstrate_asymmetric_key_storage(password):
         )
 
         # WRITE KEYS
-        with open("private_key.pem", 'wb') as key_file:
+        with open("res/private_key.pem", 'wb') as key_file:
             key_file.write(pem_private)
-        with open("public_key.pem", 'wb') as key_file:
+        with open("res/public_key.pem", 'wb') as key_file:
             key_file.write(pem_public)
 
         # LOAD KEYS
-        with open("private_key.pem", "rb") as key_file:
+        with open("res/private_key.pem", "rb") as key_file:
             private_key_after = serialization.load_pem_private_key(
                 key_file.read(),
                 password=password_bytes,
                 backend=default_backend()
             )
-        with open("public_key.pem", "rb") as key_file:
+        with open("res/public_key.pem", "rb") as key_file:
             public_key_after = serialization.load_pem_public_key(
                 key_file.read(),
                 backend=default_backend()

@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def demonstrate_file_encryption_password_based(plain_text, password):
+def demonstrate_file_encryption_password_based(plain_text_file_name, password):
     """
     All in one example for encryption and decryption of a file in one method.
     - Random password generation using strong secure random number generator
@@ -25,7 +25,8 @@ def demonstrate_file_encryption_password_based(plain_text, password):
     - UTF-8 encoding of Strings
     - Exception handling
     """
-    # TODO: read plain text from file
+    with open(plain_text_file_name, 'r') as plain_text_file:
+        plain_text = plain_text_file.read()
 
     try:
         # GENERATE password (not needed if you have a password already)
@@ -59,11 +60,11 @@ def demonstrate_file_encryption_password_based(plain_text, password):
         )
 
         # WRITE to file
-        with open("encrypted_file.enc", 'wb') as encrypted_file:
+        with open("res/encrypted_file.enc", 'wb') as encrypted_file:
             encrypted_file.write(cipher_text_bytes)
 
         # READ from file
-        with open("encrypted_file.enc", 'rb') as encrypted_file:
+        with open("res/encrypted_file.enc", 'rb') as encrypted_file:
             cipher_file_content = encrypted_file.read()
 
         # DECRYPTION
@@ -81,5 +82,4 @@ def demonstrate_file_encryption_password_based(plain_text, password):
 
 if __name__ == '__main__':
     # demonstrate method
-    demonstrate_file_encryption_password_based("Text that is going to be sent over an insecure channel and must be "
-                                               "encrypted at all costs!\n Also with multiple lines!", "")
+    demonstrate_file_encryption_password_based("res/plain_text_file.txt", "")

@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - changed iterations to 10000 for symmetric encryption
 - changed functions to have demonstrate_
 - changed functions to be parameterized
+- changed file encryption to use a file instead of text
 
 ## [0.1.1] - 2018-07-11
 
