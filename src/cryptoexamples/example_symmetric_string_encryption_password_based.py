@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def demonstrate_string_encryption_password_based():
+def demonstrate_string_encryption_password_based(plain_text, password):
     """
     All in one example for encryption and decryption of a string in one method.
     - Random password generation using strong secure random number generator
@@ -27,12 +27,11 @@ def demonstrate_string_encryption_password_based():
     - UTF-8 encoding of Strings
     - Exception handling
     """
-    plain_text = "Text that is going to be sent over an insecure channel and must be encrypted at all costs!"
-
     try:
         # GENERATE password (not needed if you have a password already)
-        alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        password = "".join(secrets.choice(alphabet) for _ in range(40))
+        if not password:
+            alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            password = "".join(secrets.choice(alphabet) for _ in range(40))
         password_bytes = password.encode('utf-8')
 
         # GENERATE random salt (needed for PBKDF2HMAC)
@@ -72,3 +71,9 @@ def demonstrate_string_encryption_password_based():
         logger.info("Decrypted and original plain text are the same: %s", decrypted_cipher_text == plain_text)
     except (UnsupportedAlgorithm, AlreadyFinalized, InvalidTag):
         logger.exception("Symmetric encryption failed")
+
+
+if __name__ == '__main__':
+    # demonstrate method
+    demonstrate_string_encryption_password_based("Text that is going to be sent over an insecure channel and must be "
+                                                 "encrypted at all costs!", "")

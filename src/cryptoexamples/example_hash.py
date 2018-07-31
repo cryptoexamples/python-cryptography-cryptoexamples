@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def demonstrate_string_hash():
+def demonstrate_string_hash(plain_text):
     """
     All in one example for hashing of a string in one method.
     - SHA-512 hashes
@@ -19,7 +19,6 @@ def demonstrate_string_hash():
     - UTF-8 encoding of Strings
     - Exception handling
     """
-    plain_text = "Text that should be authenticated by comparing the hash of it!"
     try:
         # Get digest instance
         digest = hashes.Hash(hashes.SHA512(), backend=default_backend())
@@ -34,3 +33,8 @@ def demonstrate_string_hash():
         logger.info(hash_string)
     except (UnsupportedAlgorithm, AlreadyFinalized):
         logger.exception("Hashing failed")
+
+
+if __name__ == '__main__':
+    # demonstrate method
+    demonstrate_string_hash("Text that should be authenticated by comparing the hash of it!")

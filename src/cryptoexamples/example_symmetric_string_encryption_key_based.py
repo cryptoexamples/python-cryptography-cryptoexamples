@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def demonstrate_string_encryption_key_based():
+def demonstrate_string_encryption_key_based(plain_text):
     """
     All in one example for encryption and decryption of a string in one method.
     - Random key generation using OS random mode
@@ -19,8 +19,6 @@ def demonstrate_string_encryption_key_based():
     - UTF-8 encoding of Strings
     - Exception handling
     """
-    plain_text = "Text that is going to be sent over an insecure channel and must be encrypted at all costs!"
-
     try:
         # GENERATE key
         key = AESGCM.generate_key(bit_length=256)
@@ -49,3 +47,9 @@ def demonstrate_string_encryption_key_based():
         logger.info("Decrypted and original plain text are the same: %s", decrypted_cipher_text == plain_text)
     except InvalidTag:
         logger.exception("Symmetric string encryption failed")
+
+
+if __name__ == '__main__':
+    # demonstrate method
+    demonstrate_string_encryption_key_based("Text that is going to be sent over an insecure channel and must be "
+                                            "encrypted at all costs!")

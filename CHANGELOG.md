@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - changed logging to lazy logging
 - changed salt to 64 bytes for symmetric encryption
 - changed iterations to 10000 for symmetric encryption
+- changed functions to have demonstrate_
+- changed functions to be parameterized
 
 ## [0.1.1] - 2018-07-11
 

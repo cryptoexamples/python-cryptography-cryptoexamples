@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def demonstrate_asymmetric_string_encryption():
+def demonstrate_asymmetric_string_encryption(plain_text):
     """
     All in one example for asymmetric encryption and decryption of a string in one method.
     - Generation of public and private RSA 4096 bit keypair
@@ -21,8 +21,6 @@ def demonstrate_asymmetric_string_encryption():
     - UTF-8 encoding of Strings
     - Exception handling
     """
-    plain_text = "Text that is going to be sent over an insecure channel and must be encrypted at all costs!"
-
     try:
         # GENERATE NEW KEYPAIR
         private_key = rsa.generate_private_key(
@@ -58,3 +56,9 @@ def demonstrate_asymmetric_string_encryption():
         logger.info("Decrypted and original plain text are the same: %s", decrypted_cipher_text == plain_text)
     except UnsupportedAlgorithm:
         logger.exception("Asymmetric encryption failed")
+
+
+if __name__ == '__main__':
+    # demonstrate method
+    demonstrate_asymmetric_string_encryption("Text that is going to be sent over an insecure channel and must be "
+                                             "encrypted at all costs!")

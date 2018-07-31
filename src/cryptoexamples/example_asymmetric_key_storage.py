@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def demonstrate_asymmetric_key_storage():
+def demonstrate_asymmetric_key_storage(password):
     """
     All in one example for key storage of a asymmetric key in one method.
     - Random password generation using strong secure random number generator
@@ -23,8 +23,9 @@ def demonstrate_asymmetric_key_storage():
     """
     try:
         # GENERATE password (not needed if you have a password already)
-        alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        password = "".join(secrets.choice(alphabet) for _ in range(20))
+        if not password:
+            alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            password = "".join(secrets.choice(alphabet) for _ in range(20))
         logger.info(password)
         password_bytes = password.encode('utf-8')
 
@@ -87,3 +88,8 @@ def demonstrate_asymmetric_key_storage():
         logger.info("Public Key before and after storage is the same: %s", public_before == public_after)
     except (UnsupportedAlgorithm, ValueError, TypeError):
         logger.exception("Asymmetric key storage failed")
+
+
+if __name__ == '__main__':
+    # demonstrate method
+    demonstrate_asymmetric_key_storage("")

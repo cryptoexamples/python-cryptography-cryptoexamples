@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def demonstrate_signature_rsa():
+def demonstrate_signature_rsa(plain_text):
     """
     All in one example for cryptographic signing of a string in one method.
     - Generation of public and private RSA 4096 bit keypair
@@ -22,8 +22,6 @@ def demonstrate_signature_rsa():
     - UTF-8 encoding of Strings
     - Exception handling
     """
-    plain_text = "Text that should be signed to prevent unknown tampering with its content."
-
     try:
         # GENERATE NEW KEYPAIR
         private_key = rsa.generate_private_key(
@@ -63,3 +61,8 @@ def demonstrate_signature_rsa():
         logger.info("Signature is correct: %s", is_signature_correct)
     except UnsupportedAlgorithm:
         logger.exception("Signing failed")
+
+
+if __name__ == '__main__':
+    # demonstrate method
+    demonstrate_signature_rsa("Text that should be signed to prevent unknown tampering with its content.")
