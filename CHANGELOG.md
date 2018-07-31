@@ -9,7 +9,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added 
 
-- added install instructions in each example
+- added python 3.7 to travis
+- added valid python versions in each example markdown page
+- added install instructions in each example markdown page
+- added pylint
+
+### Changed
+
+- changed logging to lazy logging
+- changed salt to 64 bytes for symmetric encryption
+- changed iterations to 10000 for symmetric encryption
 
 ## [0.1.1] - 2018-07-11
 
