@@ -15,5 +15,4 @@ is_landingpage: 1
 | Asymmetric Encryption / Public Key Cryptography | [Asymmetric String Encryption ✔](python_cryptography_asymmetric_string_encryption.html) |
 | Key Storage                                     | [Asymmetric Key Storage ✔](python_cryptography_asymmetric_key_storage.html) |
 | Hashing                                         | [String Hash ✔](python_cryptography_string_hash.html) |
-| Crypto Provider Setup                           |                                        |
 | Digital Signatures                              | [String Signing ✔](python_cryptography_string_signature_rsa.html) |

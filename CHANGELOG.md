@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.2.0] - 2018-08-07
+
 ### Added 
 
 - added python 3.7 to travis
@@ -19,7 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - changed logging to lazy logging
 - changed salt to 64 bytes for symmetric encryption
 - changed iterations to 10000 for symmetric encryption
-- changed functions to have demonstrate_
+- changed functions to have demonstrate_ prefix
 - changed functions to be parameterized
 - changed file encryption to use a file instead of text
 
@@ -75,6 +77,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - made some security relevant changes
 - made other security relevant changes
 
-[Unreleased]: https://github.com/cryptoexamples/python-cryptography-cryptoexamples/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/cryptoexamples/python-cryptography-cryptoexamples/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/cryptoexamples/java-crypto-examples/releases/tag/v0.2.0
 [0.1.1]: https://github.com/cryptoexamples/java-crypto-examples/releases/tag/v0.1.1
 [0.1.0]: https://github.com/cryptoexamples/java-crypto-examples/releases/tag/v0.1.0
