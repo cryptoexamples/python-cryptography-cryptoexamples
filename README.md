@@ -1,6 +1,6 @@
 # python-cryptography-cryptoexamples for [CryptoExamples.com](https://www.cryptoexamples.com)
 
-Example code for cryptographic use cases. Used in [CryptoExamples](https://github.com/kmindi/crypto-examples)
+Example code for cryptographic use cases. Used in [CryptoExamples](https://github.com/cryptoexamples/CryptoExamples)
 
 
 [![Build status](https://travis-ci.org/cryptoexamples/python-cryptography-cryptoexamples.svg?branch=master)](https://travis-ci.org/cryptoexamples/python-cryptography-cryptoexamples)
