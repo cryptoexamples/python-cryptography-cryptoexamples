@@ -1,5 +1,3 @@
-import astroid
-
 from pylint.checkers import BaseChecker
 from pylint.interfaces import IAstroidChecker
 
@@ -42,11 +40,10 @@ class GuidelineChecker(BaseChecker):
         # reset demonstrate count for each file
         self.demonstrate = 0
         # check filename begins with example_
-        print(node.name)
         if not (node.name.startswith('example_') or node.name.startswith('cryptoexamples.example_')):
             self.add_message(self.EXAMPLE_PREFIX, node=node)
         # check for logger
-        if not 'logger' in node.globals:
+        if 'logger' not in node.globals:
             self.add_message(self.MISSING_LOGGER, node=node)
 
 

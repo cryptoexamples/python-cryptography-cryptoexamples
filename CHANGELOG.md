@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- added a custom checker for pylint to check the guidelines
+
+### Changed
+
+- changed travis to use pylint on python 3.7 as well
+
+### Fixed
+
+- fixed a link in the README pointing to the old repo
+
 ## [0.2.0] - 2018-08-07
 
 ### Added 
