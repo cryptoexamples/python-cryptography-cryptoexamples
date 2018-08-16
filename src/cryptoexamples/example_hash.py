@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 def demonstrate_string_hash(plain_text):
     """
-    All in one example for hashing of a string in one method.
+    Example for hashing of a string in one method.
     - SHA-512 hashes
     - BASE64 encoding as representation for the byte-arrays
     - UTF-8 encoding of Strings

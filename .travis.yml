@@ -7,7 +7,6 @@ matrix:
         - python: 3.7
           dist: xenial
           sudo: true
-          env: SKIP_PYLINT=true
 addons:
   sonarcloud:
     organization: "kmindi-github" # the key of the org you chose at step #3
@@ -17,7 +16,8 @@ cache:
   - "$HOME/.cache/pip"
 install:
   - pip install -r requirements.txt
+before_script: export PYTHONPATH=$PYTHONPATH:pylint_customchecker
 script:
-  - if [ "$SKIP_PYLINT" = "true" ]; then echo "Skip pylint"; else pylint src; fi
+  - pylint src --load-plugins=guidelineChecker
   - pytest --junitxml=xunitresult.xml --cov=. --cov-report=xml
   - sonar-scanner

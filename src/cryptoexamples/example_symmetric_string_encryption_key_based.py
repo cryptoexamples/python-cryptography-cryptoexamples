@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 def demonstrate_string_encryption_key_based(plain_text):
     """
-    All in one example for encryption and decryption of a string in one method.
+    Example for encryption and decryption of a string in one method.
     - Random key generation using OS random mode
     - AES-256 authenticated encryption using GCM
     - BASE64 encoding as representation for the byte-arrays

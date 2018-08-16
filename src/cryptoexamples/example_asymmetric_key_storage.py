@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 def demonstrate_asymmetric_key_storage(password):
     """
-    All in one example for key storage of a asymmetric key in one method.
+    Example for key storage of a asymmetric key in one method.
     - Random password generation using strong secure random number generator
     - Generation of public and private RSA 4096 bit keypair
     - Serialization of the private key using PEM encoding, PKCS8 format and a password

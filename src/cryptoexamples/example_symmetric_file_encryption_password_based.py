@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 def demonstrate_file_encryption_password_based(plain_text_file_name, password):
     """
-    All in one example for encryption and decryption of a file in one method.
+    Example for encryption and decryption of a file in one method.
     - Random password generation using strong secure random number generator
     - Random salt generation using OS random mode
     - Key derivation using PBKDF2 HMAC SHA-512

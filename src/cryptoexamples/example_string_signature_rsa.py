@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 def demonstrate_signature_rsa(plain_text):
     """
-    All in one example for cryptographic signing of a string in one method.
+    Example for cryptographic signing of a string in one method.
     - Generation of public and private RSA 4096 bit keypair
     - SHA-512 with RSA signature of text using PSS and MGF1 padding
     - BASE64 encoding as representation for the byte-arrays

@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 def demonstrate_string_encryption_password_based(plain_text, password):
     """
-    All in one example for encryption and decryption of a string in one method.
+    Example for encryption and decryption of a string in one method.
     - Random password generation using strong secure random number generator
     - Random salt generation using OS random mode
     - Key derivation using PBKDF2 HMAC SHA-512

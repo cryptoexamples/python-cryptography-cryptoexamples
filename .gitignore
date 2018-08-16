@@ -179,3 +179,4 @@ venv.bak/
 *.enc
 *.pem
 xunitresult.xml
+venv*/

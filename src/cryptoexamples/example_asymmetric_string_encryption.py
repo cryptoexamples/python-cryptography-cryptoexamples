@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 def demonstrate_asymmetric_string_encryption(plain_text):
     """
-    All in one example for asymmetric encryption and decryption of a string in one method.
+    Example for asymmetric encryption and decryption of a string in one method.
     - Generation of public and private RSA 4096 bit keypair
     - RSA encryption and decryption of text using OAEP and MGF1 padding
     - BASE64 encoding as representation for the byte-arrays
