@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def demonstrate_asymmetric_key_storage(password):
+def demonstrate_asymmetric_key_storage(password=""):
     """
     Example for key storage of a asymmetric key in one method.
     - Random password generation using strong secure random number generator
@@ -84,8 +84,10 @@ def demonstrate_asymmetric_key_storage(password):
             format=serialization.PublicFormat.SubjectPublicKeyInfo
         )
 
-        logger.info("Private Key before and after storage is the same: %s", private_before == private_after)
-        logger.info("Public Key before and after storage is the same: %s", public_before == public_after)
+        logger.info("Private Key before and after storage is the same: %s",
+                    private_before == private_after)
+        logger.info("Public Key before and after storage is the same: %s",
+                    public_before == public_after)
     except (UnsupportedAlgorithm, ValueError, TypeError):
         logger.exception("Asymmetric key storage failed")
 

@@ -18,9 +18,10 @@ class GuidelineChecker(BaseChecker):
         'C5001': ('Files have to start with "example_"',
                   EXAMPLE_PREFIX,
                   'Refer to guidelines'),
-        'C5002': ('A logger has to be specified. Should be named "logger" and be available as global variable',
-                  MISSING_LOGGER,
-                  'Refer to guidelines')
+        'C5002': (
+            'A logger has to be specified. Should be named "logger" and be available as global variable',
+            MISSING_LOGGER,
+            'Refer to guidelines')
     }
 
     options = ()
@@ -40,7 +41,8 @@ class GuidelineChecker(BaseChecker):
         # reset demonstrate count for each file
         self.demonstrate = 0
         # check filename begins with example_
-        if not (node.name.startswith('example_') or node.name.startswith('cryptoexamples.example_')):
+        if not (node.name.startswith('example_') or node.name.startswith(
+                'cryptoexamples.example_')):
             self.add_message(self.EXAMPLE_PREFIX, node=node)
         # check for logger
         if 'logger' not in node.globals:

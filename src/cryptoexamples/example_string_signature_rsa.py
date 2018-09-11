@@ -65,4 +65,5 @@ def demonstrate_signature_rsa(plain_text):
 
 if __name__ == '__main__':
     # demonstrate method
-    demonstrate_signature_rsa("Text that should be signed to prevent unknown tampering with its content.")
+    demonstrate_signature_rsa(
+        "Text that should be signed to prevent unknown tampering with its content.")

@@ -44,12 +44,14 @@ def demonstrate_string_encryption_key_based(plain_text):
         )
         decrypted_cipher_text = decrypted_cipher_text_bytes.decode('utf-8')
 
-        logger.info("Decrypted and original plain text are the same: %s", decrypted_cipher_text == plain_text)
+        logger.info("Decrypted and original plain text are the same: %s",
+                    decrypted_cipher_text == plain_text)
     except InvalidTag:
         logger.exception("Symmetric string encryption failed")
 
 
 if __name__ == '__main__':
     # demonstrate method
-    demonstrate_string_encryption_key_based("Text that is going to be sent over an insecure channel and must be "
-                                            "encrypted at all costs!")
+    demonstrate_string_encryption_key_based(
+        "Text that is going to be sent over an insecure channel and must be "
+        "encrypted at all costs!")

@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def demonstrate_file_encryption_password_based(plain_text_file_name, password):
+def demonstrate_file_encryption_password_based(plain_text_file_name, password=""):
     """
     Example for encryption and decryption of a file in one method.
     - Random password generation using strong secure random number generator
@@ -75,7 +75,8 @@ def demonstrate_file_encryption_password_based(plain_text_file_name, password):
         )
         decrypted_cipher_text = decrypted_cipher_text_bytes.decode('utf-8')
 
-        logger.info("Decrypted and original plain text are the same: %s", decrypted_cipher_text == plain_text)
+        logger.info("Decrypted and original plain text are the same: %s",
+                    decrypted_cipher_text == plain_text)
     except (UnsupportedAlgorithm, AlreadyFinalized, InvalidTag):
         logger.exception("Symmetric file encryption failed")
 

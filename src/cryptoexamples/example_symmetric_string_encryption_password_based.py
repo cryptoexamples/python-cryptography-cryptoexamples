@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def demonstrate_string_encryption_password_based(plain_text, password):
+def demonstrate_string_encryption_password_based(plain_text, password=""):
     """
     Example for encryption and decryption of a string in one method.
     - Random password generation using strong secure random number generator
@@ -68,12 +68,14 @@ def demonstrate_string_encryption_password_based(plain_text, password):
         )
         decrypted_cipher_text = decrypted_cipher_text_bytes.decode('utf-8')
 
-        logger.info("Decrypted and original plain text are the same: %s", decrypted_cipher_text == plain_text)
+        logger.info("Decrypted and original plain text are the same: %s",
+                    decrypted_cipher_text == plain_text)
     except (UnsupportedAlgorithm, AlreadyFinalized, InvalidTag):
         logger.exception("Symmetric encryption failed")
 
 
 if __name__ == '__main__':
     # demonstrate method
-    demonstrate_string_encryption_password_based("Text that is going to be sent over an insecure channel and must be "
-                                                 "encrypted at all costs!", "")
+    demonstrate_string_encryption_password_based(
+        "Text that is going to be sent over an insecure channel and must be "
+        "encrypted at all costs!", "")
