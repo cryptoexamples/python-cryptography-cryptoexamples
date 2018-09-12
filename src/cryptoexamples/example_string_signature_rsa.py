@@ -35,7 +35,7 @@ def demonstrate_signature_rsa(plain_text):
         signature = private_key.sign(
             plain_text.encode('utf-8'),
             padding.PSS(
-                mgf=padding.MGF1(hashes.SHA512()),
+                mgf=padding.MGF1(hashes.SHA256()),
                 salt_length=padding.PSS.MAX_LENGTH
             ),
             hashes.SHA512()
@@ -49,7 +49,7 @@ def demonstrate_signature_rsa(plain_text):
                 signature,
                 plain_text.encode('utf-8'),
                 padding.PSS(
-                    mgf=padding.MGF1(hashes.SHA512()),
+                    mgf=padding.MGF1(hashes.SHA256()),
                     salt_length=padding.PSS.MAX_LENGTH
                 ),
                 hashes.SHA512()

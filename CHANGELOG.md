@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - changed the password in all valid functions to be optional
 - changed the examples to use random.SystemRandom instead of secrets module
 - added support for python 2.7
+- change MG1 and and oaep padding hash functions to SHA-256
 
 ### Fixed
 
