@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - changed the examples to use random.SystemRandom instead of secrets module
 - added support for python 2.7
 - change MG1 and and oaep padding hash functions to SHA-256
+- change nonce for AESGCM to 12 bytes
 
 ### Fixed
 

@@ -24,7 +24,7 @@ def demonstrate_string_encryption_key_based(plain_text):
         key = AESGCM.generate_key(bit_length=256)
 
         # GENERATE random nonce (number used once)
-        nonce = os.urandom(32)
+        nonce = os.urandom(12)
 
         # ENCRYPTION
         aesgcm = AESGCM(key)

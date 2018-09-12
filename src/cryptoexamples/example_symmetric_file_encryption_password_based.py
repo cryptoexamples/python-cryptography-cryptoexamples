@@ -49,7 +49,7 @@ def demonstrate_file_encryption_password_based(plain_text_file_name, password=""
         key = kdf.derive(password_bytes)
 
         # GENERATE random nonce (number used once)
-        nonce = os.urandom(32)
+        nonce = os.urandom(12)
 
         # ENCRYPTION
         aesgcm = AESGCM(key)
