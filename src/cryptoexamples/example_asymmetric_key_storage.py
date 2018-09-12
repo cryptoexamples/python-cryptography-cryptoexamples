@@ -1,5 +1,5 @@
 import logging
-import secrets  # python >= 3.6
+from random import SystemRandom
 
 from cryptography.exceptions import UnsupportedAlgorithm
 from cryptography.hazmat.backends import default_backend
@@ -25,7 +25,7 @@ def demonstrate_asymmetric_key_storage(password=""):
         # GENERATE password (not needed if you have a password already)
         if not password:
             alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-            password = "".join(secrets.choice(alphabet) for _ in range(20))
+            password = "".join(SystemRandom().choice(alphabet) for _ in range(20))
         logger.info(password)
         password_bytes = password.encode('utf-8')
 

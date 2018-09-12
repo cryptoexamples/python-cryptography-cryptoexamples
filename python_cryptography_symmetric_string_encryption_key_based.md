@@ -37,8 +37,9 @@ tags: [Python, AES, GCM, Salt, AEAD]
 
 [Install](https://cryptography.io/en/latest/installation/) `cryptography` with [`pip`](https://packaging.python.org/tutorials/installing-packages/): `pip install cryptorgraphy`
 
-## Used Python version
+## Supported Python versions
 
+- Python 2.7
 - Python 3.6
 - Python 3.7
 

@@ -1,6 +1,6 @@
 import logging
 import os
-import secrets  # python >= 3.6
+from random import SystemRandom
 
 from cryptography.exceptions import AlreadyFinalized
 from cryptography.exceptions import InvalidTag
@@ -32,7 +32,7 @@ def demonstrate_file_encryption_password_based(plain_text_file_name, password=""
         # GENERATE password (not needed if you have a password already)
         if not password:
             alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-            password = "".join(secrets.choice(alphabet) for _ in range(40))
+            password = "".join(SystemRandom().choice(alphabet) for _ in range(40))
         password_bytes = password.encode('utf-8')
 
         # GENERATE random salt (needed for PBKDF2HMAC)

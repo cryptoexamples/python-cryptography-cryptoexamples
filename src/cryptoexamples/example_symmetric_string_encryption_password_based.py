@@ -1,7 +1,7 @@
 import base64
 import logging
 import os
-import secrets  # python >= 3.6
+from random import SystemRandom
 
 from cryptography.exceptions import AlreadyFinalized
 from cryptography.exceptions import InvalidTag
@@ -31,7 +31,7 @@ def demonstrate_string_encryption_password_based(plain_text, password=""):
         # GENERATE password (not needed if you have a password already)
         if not password:
             alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-            password = "".join(secrets.choice(alphabet) for _ in range(40))
+            password = "".join(SystemRandom().choice(alphabet) for _ in range(40))
         password_bytes = password.encode('utf-8')
 
         # GENERATE random salt (needed for PBKDF2HMAC)
