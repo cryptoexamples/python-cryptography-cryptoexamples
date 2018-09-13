@@ -57,13 +57,13 @@ def demonstrate_asymmetric_key_storage(password=""):
         # LOAD KEYS
         with open("res/private_key.pem", "rb") as key_file:
             private_key_after = serialization.load_pem_private_key(
-                key_file.read(),
+                data=key_file.read(),
                 password=password_bytes,
                 backend=default_backend()
             )
         with open("res/public_key.pem", "rb") as key_file:
             public_key_after = serialization.load_pem_public_key(
-                key_file.read(),
+                data=key_file.read(),
                 backend=default_backend()
             )
 

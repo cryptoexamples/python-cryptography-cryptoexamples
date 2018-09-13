@@ -21,7 +21,10 @@ def demonstrate_string_hash(plain_text):
     """
     try:
         # Get digest instance
-        digest = hashes.Hash(hashes.SHA512(), backend=default_backend())
+        digest = hashes.Hash(
+            algorithm=hashes.SHA512(),
+            backend=default_backend()
+        )
 
         # CREATE HASH
         digest.update(plain_text.encode('utf-8'))

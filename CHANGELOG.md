@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - change MG1 hash functions to SHA-256
 - change nonce for AESGCM to 12 bytes
 - change signing and verification hash functions zo SHA-256
+- change all functions with multiple parameter to use named parameters
 
 ### Fixed
 

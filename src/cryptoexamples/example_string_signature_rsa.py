@@ -33,12 +33,12 @@ def demonstrate_signature_rsa(plain_text):
 
         # SIGN DATA/STRING
         signature = private_key.sign(
-            plain_text.encode('utf-8'),
-            padding.PSS(
+            data=plain_text.encode('utf-8'),
+            padding=padding.PSS(
                 mgf=padding.MGF1(hashes.SHA256()),
                 salt_length=padding.PSS.MAX_LENGTH
             ),
-            hashes.SHA256()
+            algorithm=hashes.SHA256()
 
         )
         logger.info("Signature: %s", base64.urlsafe_b64encode(signature))
@@ -46,13 +46,13 @@ def demonstrate_signature_rsa(plain_text):
         # VERIFY JUST CREATED SIGNATURE USING PUBLIC KEY
         try:
             public_key.verify(
-                signature,
-                plain_text.encode('utf-8'),
-                padding.PSS(
+                signature=signature,
+                data=plain_text.encode('utf-8'),
+                padding=padding.PSS(
                     mgf=padding.MGF1(hashes.SHA256()),
                     salt_length=padding.PSS.MAX_LENGTH
                 ),
-                hashes.SHA256()
+                algorithm=hashes.SHA256()
             )
             is_signature_correct = True
         except InvalidSignature:

@@ -53,18 +53,18 @@ def demonstrate_string_encryption_password_based(plain_text, password=""):
         # ENCRYPTION
         aesgcm = AESGCM(key)
         cipher_text_bytes = aesgcm.encrypt(
-            nonce,
-            plain_text.encode('utf-8'),
-            None
+            nonce=nonce,
+            data=plain_text.encode('utf-8'),
+            associated_data=None
         )
         # CONVERSION of raw bytes to BASE64 representation
         cipher_text = base64.urlsafe_b64encode(cipher_text_bytes)
 
         # DECRYPTION
         decrypted_cipher_text_bytes = aesgcm.decrypt(
-            nonce,
-            base64.urlsafe_b64decode(cipher_text),
-            None
+            nonce=nonce,
+            data=base64.urlsafe_b64decode(cipher_text),
+            associated_data=None
         )
         decrypted_cipher_text = decrypted_cipher_text_bytes.decode('utf-8')
 

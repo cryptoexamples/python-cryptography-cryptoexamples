@@ -24,7 +24,7 @@ current_reviews: [
 
 ]
 # Indicates when this example was last updated/created. Reviews don't change this.
-last_updated: "2018-07-31"
+last_updated: "2018-09-13"
 tags: [Python, hash, SHA, SHA-512]
 ---
 

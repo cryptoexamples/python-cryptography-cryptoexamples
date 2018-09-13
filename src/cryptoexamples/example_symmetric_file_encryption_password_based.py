@@ -54,9 +54,9 @@ def demonstrate_file_encryption_password_based(plain_text_file_name, password=""
         # ENCRYPTION
         aesgcm = AESGCM(key)
         cipher_text_bytes = aesgcm.encrypt(
-            nonce,
-            plain_text.encode('utf-8'),
-            None
+            nonce=nonce,
+            data=plain_text.encode('utf-8'),
+            associated_data=None
         )
 
         # WRITE to file
@@ -69,9 +69,9 @@ def demonstrate_file_encryption_password_based(plain_text_file_name, password=""
 
         # DECRYPTION
         decrypted_cipher_text_bytes = aesgcm.decrypt(
-            nonce,
-            cipher_file_content,
-            None
+            nonce=nonce,
+            data=cipher_file_content,
+            associated_data=None
         )
         decrypted_cipher_text = decrypted_cipher_text_bytes.decode('utf-8')
 

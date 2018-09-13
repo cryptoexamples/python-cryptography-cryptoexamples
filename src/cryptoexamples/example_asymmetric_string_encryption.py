@@ -32,8 +32,8 @@ def demonstrate_asymmetric_string_encryption(plain_text):
 
         # ENCRYPTION
         cipher_text_bytes = public_key.encrypt(
-            plain_text.encode('utf-8'),
-            padding.OAEP(
+            plaintext=plain_text.encode('utf-8'),
+            padding=padding.OAEP(
                 mgf=padding.MGF1(algorithm=hashes.SHA256()),
                 algorithm=hashes.SHA512(),
                 label=None
@@ -44,8 +44,8 @@ def demonstrate_asymmetric_string_encryption(plain_text):
 
         # DECRYPTION
         decrypted_cipher_text_bytes = private_key.decrypt(
-            base64.urlsafe_b64decode(cipher_text),
-            padding.OAEP(
+            ciphertext=base64.urlsafe_b64decode(cipher_text),
+            padding=padding.OAEP(
                 mgf=padding.MGF1(algorithm=hashes.SHA256()),
                 algorithm=hashes.SHA512(),
                 label=None
