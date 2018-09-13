@@ -38,7 +38,7 @@ def demonstrate_signature_rsa(plain_text):
                 mgf=padding.MGF1(hashes.SHA256()),
                 salt_length=padding.PSS.MAX_LENGTH
             ),
-            hashes.SHA512()
+            hashes.SHA256()
 
         )
         logger.info("Signature: %s", base64.urlsafe_b64encode(signature))
@@ -52,7 +52,7 @@ def demonstrate_signature_rsa(plain_text):
                     mgf=padding.MGF1(hashes.SHA256()),
                     salt_length=padding.PSS.MAX_LENGTH
                 ),
-                hashes.SHA512()
+                hashes.SHA256()
             )
             is_signature_correct = True
         except InvalidSignature:
