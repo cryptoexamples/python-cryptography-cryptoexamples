@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.3.0] - 2018-09-10
+
 ### Added
 
 - added a custom checker for pylint to check the guidelines
@@ -97,7 +99,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - made some security relevant changes
 - made other security relevant changes
 
-[Unreleased]: https://github.com/cryptoexamples/python-cryptography-cryptoexamples/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/cryptoexamples/python-cryptography-cryptoexamples/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/cryptoexamples/java-crypto-examples/releases/tag/v0.3.0
 [0.2.0]: https://github.com/cryptoexamples/java-crypto-examples/releases/tag/v0.2.0
 [0.1.1]: https://github.com/cryptoexamples/java-crypto-examples/releases/tag/v0.1.1
 [0.1.0]: https://github.com/cryptoexamples/java-crypto-examples/releases/tag/v0.1.0
