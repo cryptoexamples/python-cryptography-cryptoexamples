@@ -35,10 +35,10 @@ def demonstrate_signature_rsa(plain_text):
         signature = private_key.sign(
             data=plain_text.encode('utf-8'),
             padding=padding.PSS(
-                mgf=padding.MGF1(hashes.SHA256()),
+                mgf=padding.MGF1(hashes.SHA512()),
                 salt_length=padding.PSS.MAX_LENGTH
             ),
-            algorithm=hashes.SHA256()
+            algorithm=hashes.SHA512()
 
         )
         logger.info("Signature: %s", base64.urlsafe_b64encode(signature))
@@ -49,10 +49,10 @@ def demonstrate_signature_rsa(plain_text):
                 signature=signature,
                 data=plain_text.encode('utf-8'),
                 padding=padding.PSS(
-                    mgf=padding.MGF1(hashes.SHA256()),
+                    mgf=padding.MGF1(hashes.SHA512()),
                     salt_length=padding.PSS.MAX_LENGTH
                 ),
-                algorithm=hashes.SHA256()
+                algorithm=hashes.SHA512()
             )
             is_signature_correct = True
         except InvalidSignature:
